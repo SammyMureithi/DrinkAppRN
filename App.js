@@ -29,6 +29,15 @@ function App() {
           },
           tabBarActiveTintColor: 'tomato',
           tabBarInactiveTintColor: 'gray',
+          tabBarStyle: {
+            backgroundColor: 'white',
+            borderRadius: 22,
+            position: 'absolute',
+            marginBottom: 10,
+            opacity: 0.9,
+            marginEnd: 10,
+            marginStart: 10,
+          },
         })}>
         <HomeStack.Screen
           name="Home"
