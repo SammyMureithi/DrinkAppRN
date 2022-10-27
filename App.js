@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import Index from './Component/Index';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
+
 const HomeStack = createBottomTabNavigator();
 function App() {
   return (
@@ -14,19 +15,17 @@ function App() {
             let iconName;
 
             if (route.name === 'Home') {
-              iconName = focused ? 'home-outline' : 'home-outline';
-            } else if (route.name === 'Settings') {
-              iconName = focused ? 'home-outline' : 'home-outline';
+              iconName = focused ? 'home' : 'home-outline';
+            } else if (route.name === 'Chat') {
+              iconName = focused ? 'chatbubble' : 'chatbubble-outline';
+            } else if (route.name === 'Favourite') {
+              iconName = focused ? 'heart' : 'heart-outline';
+            } else if (route.name === 'Account') {
+              iconName = focused ? 'person' : 'person-outline';
             }
 
             // You can return any component that you like here!
-            return (
-              <MaterialCommunityIcons
-                name={'account-convert'}
-                size={size}
-                color={color}
-              />
-            );
+            return <Ionicons name={iconName} size={size} color={color} />;
           },
           tabBarActiveTintColor: 'tomato',
           tabBarInactiveTintColor: 'gray',
@@ -37,7 +36,17 @@ function App() {
           options={{headerShown: false}}
         />
         <HomeStack.Screen
-          name="Settings"
+          name="Chat"
+          component={Index}
+          options={{headerShown: false}}
+        />
+        <HomeStack.Screen
+          name="Favourite"
+          component={Index}
+          options={{headerShown: false}}
+        />
+        <HomeStack.Screen
+          name="Account"
           component={Index}
           options={{headerShown: false}}
         />

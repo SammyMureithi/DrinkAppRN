@@ -59,7 +59,7 @@ function Index() {
   );
   return (
     <SafeAreaView>
-      <View>
+      <ScrollView>
         <View
           style={{
             display: 'flex',
@@ -99,24 +99,22 @@ function Index() {
             style={{height: 24, width: 24}}
           />
         </View>
-        <View>
-          <ScrollView>
-            <View>
-              <View
-                style={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  flexWrap: 'wrap',
-                }}>
-                {res}
-                {res}
-                {res}
-                {res}
-              </View>
-            </View>
-          </ScrollView>
+        <View
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          {res}
+          {res}
+          {res}
+          {res}
+          {res}
+          {res}
         </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
